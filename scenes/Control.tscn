@@ -1,0 +1,48 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="MenuButton" parent="HBoxContainer"]
+offset_right = 34.0
+offset_bottom = 20.0
+text = "asd"
+items = [ "Item 0", null, 0, false, false, 0, 0, null, "", false, "Item 1", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true
+
+[node name="MenuButton2" type="MenuButton" parent="HBoxContainer"]
+offset_left = 38.0
+offset_right = 72.0
+offset_bottom = 20.0
+focus_mode = 2
+text = "asd"
+items = [ "Item 0", null, 0, false, false, 0, 0, null, "", false, "Item 1", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true
+
+[node name="MenuButton3" type="MenuButton" parent="HBoxContainer"]
+offset_left = 76.0
+offset_right = 110.0
+offset_bottom = 20.0
+focus_mode = 2
+text = "asd"
+items = [ "Item 0", null, 0, false, false, 0, 0, null, "", false, "Item 1", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true
+
+[node name="MenuButton4" type="MenuButton" parent="HBoxContainer"]
+offset_left = 114.0
+offset_right = 148.0
+offset_bottom = 20.0
+focus_mode = 2
+text = "asd"
+items = [ "Item 0", null, 0, false, false, 0, 0, null, "", false, "Item 1", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true

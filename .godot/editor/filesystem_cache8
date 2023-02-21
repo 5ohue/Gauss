@@ -1,0 +1,17 @@
+2a60927148abd1d33b818b535e306557
+::res://::1676973944
+export_presets.cfg::TextFile::-1::1637769552::0::1::::<><>::
+icon.png::CompressedTexture2D::8191443011454417954::1637671738::1676973952::1::::<><>::
+::res://fonts/::1664276204
+font.tres::FontFile::-1::1676973935::0::1::::<><>::res://fonts/Ubuntu-Regular.ttf
+Ubuntu-Regular.ttf::FontFile::7271577551373003172::1637592955::1676973952::1::::<><>::
+::res://scenes/::1664276204
+Control.tscn::PackedScene::-1::1676973935::0::1::::<><>::
+UI.tscn::PackedScene::-1::1676973935::0::1::::<><>::res://fonts/font.tres<>res://scripts/Canvas-drawer.gd<>res://scripts/spin_left.gd<>res://scripts/spin_right.gd<>res://scripts/UI.gd<>res://scripts/MenuButton.gd<>res://scripts/peak.gd
+::res://scripts/::1664276204
+Canvas-drawer.gd::GDScript::-1::1676973935::0::1::::<>ColorRect<>::
+MenuButton.gd::GDScript::-1::1676973935::0::1::::<>MenuButton<>::
+peak.gd::GDScript::-1::1676973935::0::1::::<>Label<>::
+spin_left.gd::GDScript::-1::1676973935::0::1::::<>SpinBox<>::
+spin_right.gd::GDScript::-1::1676973935::0::1::::<>SpinBox<>::
+UI.gd::GDScript::-1::1676973935::0::1::::<>Panel<>::

@@ -1,0 +1,207 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6frpynmj0wjl"]
+
+[ext_resource type="Script" path="res://scripts/Canvas-drawer.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/spin_left.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/spin_right.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="5"]
+[ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6"]
+[ext_resource type="Script" path="res://scripts/peak.gd" id="7"]
+
+[node name="Panel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("5")
+
+[node name="UI" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 34.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Canvas_drawer" type="ColorRect" parent="UI/PanelContainer"]
+clip_contents = true
+layout_mode = 2
+color = Color(0.807843, 0.807843, 0.807843, 1)
+script = ExtResource("2")
+
+[node name="left_panel" type="PanelContainer" parent="UI"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/left_panel"]
+layout_mode = 2
+
+[node name="limits" type="Label" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+text = "Пределы графика"
+
+[node name="left" type="HBoxContainer" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/left_panel/VBoxContainer/left"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Слева: "
+
+[node name="spin_left" type="SpinBox" parent="UI/left_panel/VBoxContainer/left"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -50.0
+max_value = 49.9
+step = 0.1
+value = -5.0
+script = ExtResource("3")
+
+[node name="right" type="HBoxContainer" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/left_panel/VBoxContainer/right"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Справа: "
+
+[node name="spin_right" type="SpinBox" parent="UI/left_panel/VBoxContainer/right"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -49.9
+max_value = 50.0
+step = 0.1
+value = 5.0
+script = ExtResource("4")
+
+[node name="upper" type="HBoxContainer" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/left_panel/VBoxContainer/upper"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Сверху: "
+
+[node name="spin_up" type="SpinBox" parent="UI/left_panel/VBoxContainer/upper"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 50.0
+step = 0.01
+value = 5.0
+
+[node name="HSeparator" type="HSeparator" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="gauss_params" type="Label" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+text = "Параметры графика"
+
+[node name="A" type="HBoxContainer" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/left_panel/VBoxContainer/A"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A: "
+
+[node name="spin-A" type="SpinBox" parent="UI/left_panel/VBoxContainer/A"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="sigma" type="HBoxContainer" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/left_panel/VBoxContainer/sigma"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "σ: "
+
+[node name="spin-sigm" type="SpinBox" parent="UI/left_panel/VBoxContainer/sigma"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.001
+step = 0.001
+value = 1.0
+
+[node name="integral_toggle" type="CheckBox" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+text = "Интеграл"
+
+[node name="Control" type="Control" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="peak" type="Label" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("7")
+
+[node name="HSeparator2" type="HSeparator" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="pointer-text" type="Label" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+text = "Координаты указателя:"
+
+[node name="coords_text" type="LineEdit" parent="UI/left_panel/VBoxContainer"]
+layout_mode = 2
+editable = false
+
+[node name="Menu" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 22.0
+
+[node name="MenuButton" type="MenuButton" parent="Menu"]
+layout_mode = 2
+text = "Действия"
+switch_on_hover = true
+item_count = 2
+popup/item_0/text = "Вернуть по умолчанию"
+popup/item_0/id = 0
+popup/item_1/text = "Изменить цвет"
+popup/item_1/id = 1
+script = ExtResource("6")
+
+[node name="Window" type="Window" parent="Menu/MenuButton"]
+size = Vector2i(497, 447)
+visible = false
+
+[node name="ColorPicker" type="ColorPicker" parent="Menu/MenuButton/Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+alignment = 1
+color = Color(1, 0, 0, 1)
+edit_alpha = false
+presets_visible = false
+
+[connection signal="gui_input" from="UI/PanelContainer/Canvas_drawer" to="." method="_on_Canvasdrawer_gui_input"]
+[connection signal="item_rect_changed" from="UI/PanelContainer/Canvas_drawer" to="UI/PanelContainer/Canvas_drawer" method="_on_Canvasdrawer_item_rect_changed"]
+[connection signal="recalculated" from="UI/PanelContainer/Canvas_drawer" to="UI/left_panel/VBoxContainer/peak" method="_on_Canvas_drawer_recalculated"]
+[connection signal="value_changed" from="UI/left_panel/VBoxContainer/left/spin_left" to="UI/PanelContainer/Canvas_drawer" method="_on_spin_left_value_changed"]
+[connection signal="value_changed" from="UI/left_panel/VBoxContainer/left/spin_left" to="UI/left_panel/VBoxContainer/left/spin_left" method="_on_spin_left_value_changed"]
+[connection signal="value_changed" from="UI/left_panel/VBoxContainer/right/spin_right" to="UI/PanelContainer/Canvas_drawer" method="_on_spin_right_value_changed"]
+[connection signal="value_changed" from="UI/left_panel/VBoxContainer/right/spin_right" to="UI/left_panel/VBoxContainer/right/spin_right" method="_on_spin_right_value_changed"]
+[connection signal="value_changed" from="UI/left_panel/VBoxContainer/upper/spin_up" to="UI/PanelContainer/Canvas_drawer" method="_on_spin_up_value_changed"]
+[connection signal="value_changed" from="UI/left_panel/VBoxContainer/A/spin-A" to="UI/PanelContainer/Canvas_drawer" method="_on_spinA_value_changed"]
+[connection signal="value_changed" from="UI/left_panel/VBoxContainer/sigma/spin-sigm" to="UI/PanelContainer/Canvas_drawer" method="_on_spinsigm_value_changed"]
+[connection signal="toggled" from="UI/left_panel/VBoxContainer/integral_toggle" to="UI/PanelContainer/Canvas_drawer" method="_on_integral_toggle_toggled"]
+[connection signal="close_requested" from="Menu/MenuButton/Window" to="Menu/MenuButton" method="_on_window_close_requested"]
+[connection signal="color_changed" from="Menu/MenuButton/Window/ColorPicker" to="UI/PanelContainer/Canvas_drawer" method="_on_ColorPicker_color_changed"]

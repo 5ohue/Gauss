@@ -1,0 +1,6 @@
+res://scenes/UI.tscn
+res://scripts/Canvas-drawer.gd
+res://scripts/UI.gd
+res://scripts/MenuButton.gd
+res://fonts/font.tres
+res://scripts/peak.gd
